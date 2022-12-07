@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" type="image/png" href="images/logomakr.com:app:0K8xko.png">
+        <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+        <!-- <link rel="stylesheet" href="css/mdb.min.css" /> -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/main.css">
+        
+        <link rel="stylesheet" type="text/css" href="css/terrestrial.css"> 
+        <link rel="stylesheet" type="text/css" href="css/index.css"> -->
+        
+        <script type="text/javascript" src="js/main.js"></script>
+    
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+          rel = "stylesheet">
+          <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+          <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+          <script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+          <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+          <link href="http://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+          <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+          <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+        
+                
+       
+          <link rel="stylesheet" href="https://use.typekit.net/zje6zde.css">  
+        <link rel="stylesheet" href="https://use.typekit.net/zje6zde.css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wandering Beyond Blue Yonder</title>
+    </head>
+    
+    <body id="homepage">
+        <div class="skip"><a href="#main">Skip to Main Content</a></div>
+    
+        <!-- Navigation Bar-->
+        <header>
+            <img src="images/logomakr.com:app:0K8xko.png" alt="Wandering beyond blue yonder logo">
+            <nav class="full" aria-label="large navigation">
+                <ul class="nav-links">
+                    <li class="nav-item"><a href="index.html" >Home</a></li>
+                    <li class="nav-item"><a href="terrestrial.html">Terrestrial Planets</a></li>
+                    <li class="nav-item"><a href="gas.html">Gas Giant</a></li>
+                    <li class="nav-item"><a href="ice.html">Ice Giant</a></li>
+                    <li class="nav-item"><a href="dwarf.html">Dwarf Planets</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="active">Gallery</a></li>
+                </ul>
+            </nav>
+            <nav class="mobile" aria-label="small navigation">
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="myFunction()">MENU
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href="index.html" >Home</a>
+                        <a href="terrestrial.html">Terrestrial Planets</a>
+                        <a href="gas.html">Gas Giant</a>
+                        <a href="ice.html">Ice Giant</a>
+                        <a href="dwarf.html">Dwarf Planets</a>
+                        <a href="gallery.html" class="active">Gallery</a>
+                    </div>
+                </div> 
+            </nav>
+        </header>
+        <main  id="main">
+         
+            <h1 class="gallery_h1">Image of the Day</h1>
+            
+      
+       
+         
+          <div id="date-picker">
+            <label>Select a Date: </label>
+            <input type='text' class='date' id="wrapper-date">
+           
+          </div>
+          <div class="gallery_grid">
+            <!-- class="grid-item item1" -->
+           
+             <!-- class="grid-item item2" -->
+             <div class="image_of_the_day"><section id="wrapper-media"></section>
+              </div>
+              <!-- class="grid-item item3" -->
+              <div class="grid_item wrapper-title">
+                <h2 id="wrapper-title"></h2>
+              </div>
+               <!-- class="grid-item item4" -->
+               <div class="grid_item wrapper-copyright">
+                <p>Copyright: <span id="wrapper-copyright"></span></p>
+               </div>
+                <!-- class="grid-item item5" -->
+                <div class="grid_item wrapper-explanation">
+                  <p id ="wrapper-explanation"></p>
+                </div>
+
+          </div>
+        
+              
+    </main>
+    <footer class="footer">	
+     <div>
+        <ul class="footer">
+          <li>Wandering Beyond Blue Yonder
+            &copy; Rahat Naseem University of Michigan</li>
+          <li> <a class="footer" href="https://images.nasa.gov/">Images retrieved from nasa's website </a></li>
+          <li><a class="footer" href="https://api.nasa.gov/">Nasa APIs</a></li>
+        </ul>
+     </div>
+     
+      
+  </footer>	
+
+      <!-- <script type="text/javascript" src="js/mdb.min.js"></script> -->
+  <!-- Custom scripts -->
+  <script >
+    
+    // ajex request
+     /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+        if (!e.target.matches('.dropbtn')) {
+        var myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+        }
+        }
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+        if (!e.target.matches('.dropbtn')) {
+        var myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+        }
+        }
+    }
+
+    function nasaRequest(){
+      let xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function(){
+      if(
+        this.readyState == 4 && this.status == 200){
+          // json parse to save json data
+          let data = JSON.parse(this.responseText);
+          let copyright = data["copyright"];
+          let date = data["date"]
+          let explanation = data["explanation"]
+          let hdurl = data["hdurl"]
+          let media_type = data["media_type"]
+          let title = data["title"]
+          let url = data["url"]
+          let imageType = `
+            <div
+              class="bg-image hover-overlay ripple shadow-1-strong rounded"
+              data-ripple-color="light"
+            >
+              <img id="wrapper-image" src="" class="w-100" />
+              <a id="wrapper-hdurl" href="" target="_blank">
+                <div class="mask"></div>
+              </a>
+            </div>
+          `;
+          let videoType = `
+            <div class="ratio ratio-16x9">
+              <iframe
+                class="shadow-1-strong rounded"
+                id="wrapper-video"
+                src=""
+                title="YouTube video"
+                allowfullscreen
+              ></iframe>
+            </div>
+          `;
+         
+          document.getElementById("wrapper-title").innerHTML = title;
+          document.getElementById("wrapper-copyright").innerHTML = copyright;
+          document.getElementById("wrapper-explanation").innerHTML = explanation;
+         
+          if (media_type === "video") {
+            document.getElementById("wrapper-media").innerHTML = videoType;
+            document.getElementById("wrapper-video").src = url;
+          } 
+          else {
+            document.getElementById("wrapper-media").innerHTML = imageType;
+            document.getElementById("wrapper-image").src = url;
+            document.getElementById("wrapper-hdurl").href = hdurl;
+            }
+    }
+  };
+
+
+      
+        let queryurl = "https://api.nasa.gov/planetary/apod?";
+        let querykey = "api_key=iaVnUWPL80UsziM5BEHtPLZL7p3yH9LcfCwrKNeG";
+        let date_obj = document.getElementById("wrapper-date").value
+        console.log("date_obj: "+date_obj)
+
+
+        let querydate = "&" + "date=" + date_obj;
+        console.log(querydate)
+        let queryfull = queryurl  + querykey + querydate;
+
+        xmlhttp.open('GET', queryfull, true);
+        xmlhttp.send();
+
+  }
+
+
+  
+  $(".date")
+        .datepicker({dateFormat: 'yy-mm-dd',
+            onSelect: function() { 
+                console.log("Selected date: " );
+		        $(this).change();
+          
+		    }
+		})
+        .on("change", function() {
+            console.log("Got change event from field");
+            nasaRequest();
+        });
+
+  nasaRequest().onload;
+  </script>
+</body>
+
+</html>
+
+
+<!-- https://www.youtube.com/watch?v=Y1n2a7YxYGY -->
