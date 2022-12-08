@@ -18,7 +18,7 @@
         x[0].setAttribute('tabindex','0')
     }
 
-    $(function() {
+    (function() {
         $( "#datepicker" ).datepicker({ dateFormat: 'yy-mm-dd' });
         });
 
