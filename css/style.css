@@ -91,7 +91,7 @@ a {
 }
 .active {
     /* background-color: gainsboro; */
-    font-weight: 800;
+    font-weight: 900;
     font-size: 21px;
     color: black;
     
@@ -99,7 +99,7 @@ a {
 }
 
 nav a:hover {
-    font-weight: 800;
+    font-weight: 900;
 }
 .container img {
     border: solid grey 5px;
@@ -329,6 +329,20 @@ h1 {
     
     .show {
         display: block;
+    }
+    .active {
+        border: solid grey 3px;
+        border-radius: 5px;
+        background-color: gainsboro;
+        font-weight: 900;
+        font-size: 21px;
+        color: black;
+        
+    
+    }
+    
+    nav a:hover {
+        font-weight: 900;
     }
 }
 @media screen and (min-width: 751px) {
