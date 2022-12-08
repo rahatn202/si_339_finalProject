@@ -254,7 +254,7 @@ h1 {
 
 .planet a:hover {
     transform: scale(1.15);
-    box-shadow: 0px 0px 15px rgb(127 137 161 / 30%);
+    box-shadow: 0px 0px 20px rgb(127 137 161 / 30%);
 }
 .planet:hover {
     transform: scale(1.1);
@@ -262,9 +262,9 @@ h1 {
 } 
 .planet {
     background-color: black;
-    box-shadow: 0px 0px 15px rgb(127 137 161 / 30%);
+    box-shadow: 0px 0px 30px rgba(243, 245, 249, 0.3);
     padding:  10px;
-    height: 300px;
+    height: 320px;
     transition: all 0.4s;
 
     /* border: solid grey 5px; */
